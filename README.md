@@ -6,7 +6,7 @@
 Este sistema permite criar e avaliar cursos/treinamento presenciais.
 
 	$ git clone https://github.com/orlandosaraivajr/sistemaAvaliacao.git
-	$ cd avaliacao .
+	$ cd sistemaAvaliacao .
 	$ virtualenv -p python3 .
 	$ source bin/activate
 	$ pip install -r requirements.txt
