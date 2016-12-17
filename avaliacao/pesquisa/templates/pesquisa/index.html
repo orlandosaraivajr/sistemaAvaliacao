@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron">
+		<h2>Pesquisa de Satisfação</h2>
+		<h4>Nesta pesquisa, de forma anônima você avaliará o curso, o instrutor e a didática aplicada.</h4>
+		<h4>Solicite ao instrutor o código do curso para iniciar sua avaliação.</h4>
+	</div>
+</div>
+<div class="container">
+	<form class="form-horizontal" action="{% url 'pesquisa:avaliarCurso'%}" method="POST">
+	    {% csrf_token %}
+
+	    <div class="form-horizontal">
+    		<label for="id_codigo_curso">Código do curso</label>
+			<input type="text" id="id_codigo_curso" name="codigo_curso" class="form-control">
+	    	<br>
+	        <button type="submit" id="id_submit" class="btn btn-primary">Avaliar Curso</button>
+	    </div>
+	</form>
+</div>
+
+{% endblock content %}

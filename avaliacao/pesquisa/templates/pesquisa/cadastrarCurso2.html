@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron">
+		<center>
+			<h2>Curso cadastrado com sucesso.</h2>
+			<h3>Informar o código de avaliação aos alunos</h3>
+			<h1>{{voucher}}</h1>
+			<form class="form-horizontal" action="{% url 'pesquisa:home'%}" method="POST">
+				{% csrf_token %}
+
+				<div class="form-horizontal">
+					<br>
+					<button type="submit" id="id_submit" class="btn btn-primary">Principal</button>
+				</div>
+			</form>
+		</center>
+	</div>
+</div>
+
+{% endblock content %}

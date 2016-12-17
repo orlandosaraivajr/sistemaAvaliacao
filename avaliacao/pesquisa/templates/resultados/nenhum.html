@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron">
+		<h2>Nenhum Curso Encontrado</h2>
+	</div>
+</div>
+<div class="container">
+	<form class="form-horizontal" action="{% url 'pesquisa:cursosAvaliados'%}" method="GET">
+	    {% csrf_token %}
+
+	    <div class="form-horizontal">
+    		<label for="id_codigo_curso">Nenhum curso encontrado.</label>
+	    	<br>
+	        <button type="submit" id="id_submit" class="btn btn-primary">Digitar código do curso</button>
+	    </div>
+	</form>
+</div>
+
+{% endblock content %}

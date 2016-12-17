@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron">
+		<h2>Pesquisa de Satisfação</h2>
+		<h3>{{ curso.nome }} - {{ curso.professor }}</h3>
+	</div>
+</div>
+<div class="container">
+	<form class="form-horizontal" action="{% url 'pesquisa:registrarAvaliacao' %}" method="POST">
+	    {% csrf_token %}
+			<input type="hidden" name="codigo_curso" value="{{ curso.id }}">
+
+     	    <legend> {{ form_pesquisa.questao1.label }}</legend>
+			    {{ form_pesquisa.questao1 }}
+			<legend> {{ form_pesquisa.questao2.label }}</legend>
+				{{ form_pesquisa.questao2 }}
+			<legend> {{ form_pesquisa.questao3.label }}</legend>
+				{{ form_pesquisa.questao3 }}
+			<legend> {{ form_pesquisa.questao4.label }}</legend>
+				{{ form_pesquisa.questao4 }}
+			<legend> {{ form_pesquisa.questao5.label }}</legend>
+				{{ form_pesquisa.questao5 }}
+			<legend> {{ form_pesquisa.questao6.label }}</legend>
+				{{ form_pesquisa.questao6 }}
+			<legend> {{ form_pesquisa.questao7.label }}</legend>
+				{{ form_pesquisa.questao7 }}
+			<legend> {{ form_pesquisa.questao8.label }}</legend>
+				{{ form_pesquisa.questao8 }}
+
+			<legend>{{ form_pesquisa.mensagem.label }}</legend>
+				{{ form_pesquisa.mensagem }}
+
+	    <div class="form-horizontal">
+    		<br>
+	        <button type="submit" id="id_submit" class="btn btn-primary">Avaliar Curso</button>
+	    </div>
+	</form>
+</div>
+
+{% endblock content %}

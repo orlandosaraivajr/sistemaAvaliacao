@@ -1,0 +1,44 @@
+<!-- Menu -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="current">
+            <a href="/">
+                <span class="glyphicon glyphicon-education"></span>
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'pesquisa:selecionarCurso'%}">
+                <span class="glyphicon glyphicon-pencil"></span>
+                Realizar Pesquisa
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'pesquisa:cursosAvaliados'%}">
+                <span class="glyphicon glyphicon-comment"></span>
+                Pesquisas Realizadas
+            </a>
+        </li>
+      </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="{% url 'pesquisa:cadastrarCurso' %}">
+                <span class="glyphicon glyphicon-check"></span>
+                Cadastro Curso
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'pesquisa:logout' %}">
+                <span class="glyphicon glyphicon-log-out"></span>
+                Logout
+            </a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

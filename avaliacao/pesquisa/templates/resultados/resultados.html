@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+
+	<div class="container">
+		<div class="jumbotron">
+			<center>
+				<h2>Resultado da Avaliação</h2>
+				<h3>{{curso.cursoNome}}</h3>
+			</center>
+		</div>
+	</div>
+	{% if form_pesquisa %}
+		<div class="container">
+			<legend> {{ form_pesquisa.questao1.label }}</legend>
+		  	<div class="progress">
+			    <div class="progress-bar" role="progressbar" aria-valuenow="{{questao1}}" aria-valuemin="0" aria-valuemax="100" style="width:{{questao1}}%">
+			      <span class="sr-only">{{questao1}}% Complete</span>
+				  {{questao1}}%
+		    	</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<legend> {{ form_pesquisa.questao2.label }}</legend>
+		  	<div class="progress">
+			    <div class="progress-bar" role="progressbar" aria-valuenow="{{questao2}}" aria-valuemin="0" aria-valuemax="100" style="width:{{questao2}}%">
+			      <span class="sr-only">{{questao2}}% Complete</span>
+				  {{questao2}}%
+		    	</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<legend> {{ form_pesquisa.questao3.label }}</legend>
+		  	<div class="progress">
+			    <div class="progress-bar" role="progressbar" aria-valuenow="{{questao3}}" aria-valuemin="0" aria-valuemax="100" style="width:{{questao3}}%">
+			      <span class="sr-only">{{questao3}}% Complete</span>
+				  {{questao3}}%
+		    	</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<legend> {{ form_pesquisa.questao4.label }}</legend>
+		  	<div class="progress">
+			    <div class="progress-bar" role="progressbar" aria-valuenow="{{questao4}}" aria-valuemin="0" aria-valuemax="100" style="width:{{questao4}}%">
+			      <span class="sr-only">{{questao4}}% Complete</span>
+				  {{questao4}}%
+		    	</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<legend> {{ form_pesquisa.questao5.label }}</legend>
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" aria-valuenow="{{questao5}}" aria-valuemin="0" aria-valuemax="100" style="width:{{questao5}}%">
+				  <span class="sr-only">{{questao5}}% Complete</span>
+				  {{questao5}}%
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<legend> {{ form_pesquisa.questao6.label }}</legend>
+		  	<div class="progress">
+			    <div class="progress-bar" role="progressbar" aria-valuenow="{{questao6}}" aria-valuemin="0" aria-valuemax="100" style="width:{{questao6}}%">
+			      <span class="sr-only">{{questao6}}% Complete</span>
+				  {{questao6}}%
+		    	</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<legend> {{ form_pesquisa.questao7.label }}</legend>
+		  	<div class="progress">
+			    <div class="progress-bar" role="progressbar" aria-valuenow="{{questao7}}" aria-valuemin="0" aria-valuemax="100" style="width:{{questao7}}%">
+			      <span class="sr-only">{{questao7}}% Complete</span>
+				  {{questao7}}%
+		    	</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<legend> {{ form_pesquisa.questao8.label }}</legend>
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" aria-valuenow="{{questao8}}" aria-valuemin="0" aria-valuemax="100" style="width:{{questao8}}%">
+				  <span class="sr-only">{{questao4}}% Complete</span>
+				  {{questao8}}% fariam outro treinamento com {{curso.professor}}
+				</div>
+			</div>
+		</div>
+
+	{% else %}
+		<div class="container">
+			<h3> Nenhuma avaliação realizada.</h3>
+		</div>
+	{% endif %}
+{% endblock content %}

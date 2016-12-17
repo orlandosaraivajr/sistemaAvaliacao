@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+    {% load static %}
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'jquery-ui/jquery-ui.css' %}" rel="stylesheet" media="screen">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+
+    {% block title %}
+      <title>Pesquisa de Satisfação</title>
+    {% endblock title %}
+
+<script src="{% static 'resultados.js' %}"></script>
+  </head>
+  <body>
+<!--
+      <img src="{% static "teste.jpg" %}" width="200" alt="My image"/>
+  -->
+      <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'jquery-ui/external/jquery/jquery.js' %}"></script>
+      <script src="{% static 'jquery-ui/jquery-ui.js' %}"></script>
+
+
+    {% include "menu.html" %}
+
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>

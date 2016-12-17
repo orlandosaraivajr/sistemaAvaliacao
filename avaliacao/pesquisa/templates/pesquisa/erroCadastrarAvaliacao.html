@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron">
+		<h2>Erro ao cadastrar a avaliação</h2>
+	</div>
+</div>
+<div class="container">
+	<form class="form-horizontal" action="{% url 'pesquisa:selecionarCurso'%}" method="POST">
+	    {% csrf_token %}
+
+	    <div class="form-horizontal">
+    		<label>Ocorreu um erro ao cadastrar avaliação.</label>
+	    	<br>
+			<label>Clique no botão abaixo para reiniciar o processo.</label>
+			<br>
+	        <button type="submit" id="id_submit" class="btn btn-primary">Digitar código do curso</button>
+	    </div>
+	</form>
+</div>
+
+{% endblock content %}

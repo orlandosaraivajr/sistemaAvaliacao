@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script>
+   $( function() {
+		 $("#dataInicio").datepicker({
+		  dateFormat: 'dd/mm/yy',
+		  dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+		  dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+		  dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+		  monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+		  monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+		  nextText: 'Próximo',
+		  prevText: 'Anterior'
+	  } );
+
+	  $("#dataFim").datepicker({
+	   dateFormat: 'dd/mm/yy',
+	   dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+	   dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+	   dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+	   monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+	   monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+	   nextText: 'Próximo',
+	   prevText: 'Anterior'
+   } );
+
+  } )
+ </script>
+<div class="container">
+	<div class="jumbotron">
+		<h2>Pesquisa de Satisfação</h2>
+		<h3>Cadastro de Curso </h3>
+	</div>
+</div>
+<div class="container">
+	<form class="form-horizontal" action="{% url 'pesquisa:cadastrarCurso' %}" method="POST">
+
+		{% if erro_encontrado %}
+			<legend>
+				Erros encontrados nos formulário.<br>
+				Preencha corretamente os dados.
+			</legend>
+		{% endif %}
+
+	    {% csrf_token %}
+ 	    {{ form_curso.nome.label }}: {{ form_curso.nome }}
+		<br><br>
+		{{ form_curso.dataInicio.label }} : {{ form_curso.dataInicio }}
+		<br><br>
+		{{ form_curso.dataFim.label }} : {{ form_curso.dataFim }}
+		<br><br>
+		{{ form_curso.professor.label }} : {{ form_curso.professor }}
+
+		<div class="form-horizontal">
+    	<br>
+	    <button type="submit" id="id_submit" class="btn btn-primary">Cadastrar curso</button>
+	</form>
+</div>
+
+{% endblock content %}

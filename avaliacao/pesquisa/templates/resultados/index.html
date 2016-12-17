@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container">
+		<div class="jumbotron">
+			<center>
+				<h1>Pesquisas Realizadas</h1>
+			</center>
+		</div>
+	</div>
+	<div class="container">
+		<form class="form-horizontal" action="{% url 'pesquisa:cursosAvaliados' %}" method="POST">
+		    {% csrf_token %}
+			<legend>Selecione o curso</legend>
+			<label>Selecione um dos cursos avaliados anteriormente.</label>
+			<br><br>
+				<select name="CursoAvaliadoAnteriormente">
+					{% for curso in cursos %}
+    				<option value="{{ curso.id }}">{{ curso.cursoNome }}</option>
+					{% endfor %}
+  				</select>
+				<br>
+			<div class="form-horizontal">
+				<br>
+				<button type="submit" id="id_submit" class="btn btn-primary">Como foi este curso ?</button>
+			</div>
+		</form>
+	</div>
+{% endblock content %}
